@@ -1,106 +1,101 @@
 @charset "UTF-8";
-
+/**/
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
-
 ul{
     list-style: none;
 }
 body{
-    background-color: #000000;
-    overflow: hidden;
+    background-color: black;
 }
-main::after {
+
+main::after{/*Usa pra fazer o degrade, depois do main, pesquisar sobre isso dps*/
     content: "";
-    position: fixed;
+    position: fixed; /*Serve pra fixar o elemento na tela*/
     top: 0;
     left: 0;
     min-height: 100vh;
-    width: 80vw;
-
-    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+    width: 80vw; /*Nao usa 100 pq iria tapar o menu por isso só 80*/
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0)65%) no-repeat;/*Degrade feito no site degrade.io algo assim, pesquisar dps*/
+    /*La na classe conteudo usar o elemento z-index com valor 1 para colocar o gradient atras do conteudo e nao na frente, parecido com order do flexbox*/
 }
-main.personagem{
-    display: none;
+
+main .personagem{
+    display: none;  /*Para não mostrar a apresentação ou display*/
     height: 100vh;
 }
 main .personagem.selecionado {
-    display: block;
+    display: block; /* Display em forma de bloco vai mostrar na tela*/
 }
-main.personagem.imagem {
+main .personagem .imagem {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /*Para a imagem cobrir o espaço exato*/
 }
-.conteudo {
-    position: absolute;
-    top: 0;
-    left: 120px;
+div.conteudo{
+    position: absolute; /* Para ficar na frente de tudo por isso absoluto*/
+    top: 0; /*Propriedade de posicionamento para subir nesse caso top 0 vai bem pra cima*/
+    left: 120px; /*Para alinhar mais contra o left ou esquerda*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /*Flexbox ja estudei tem no caderno, lembrar de olhar o espaço e fazer oq foi feito aqui embaixo*/
     min-height: 100vh;
-    max-width: 380px;
-    z-index: 1;
+    max-width: 350px;
+    z-index: 1; /*Explicacao la no main::after*/
 }
-.conteudo .nome-personagem {
-    color: #ffffff;
+div.conteudo .nome-personagem{
+    color: white;
     font-size: 48px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /*Talvez trocar de fonte pra ficar mais bonita*/
     font-weight: 400;
     margin-bottom: 20px;
 }
 
-.conteudo .descricao {
-    color: #ffffff;
-    font-family:'Montserrat', sans-serif;;
-    line-height: 24px;
+div.conteudo .descricao{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;/* Trocar de fonte tbm*/
+    font-weight: 600;
+    line-height: 24px; /*Altura entre as linhas*/
 }
 
-.conteudo .logo {
-    background-image: url("../imagens/one-piece-logo.png");
-    background-size: cover;
+div.conteudo .logo{
+    background-image: url(../imagens/one-piece-logo.png);/*Só com isso nao funcionou tem que dar a altura e largura igual o flexbox e tbm usar background size junto*/
     height: 100px;
-    width: 230px;
-    margin-bottom: 35px;
+    width: 220px;
+    background-size: cover;
+    margin-bottom: 40px;
 }
 
-.botoes {
-    position: fixed;
-    top: 0;
-    right: 0;
+ul.botoes{
+    position: fixed; /*fixar ja expliquei mais em cima*/
+    top: 0; /*posicionar*/
+    right: 0; /*posicionar*/
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    width: 180px;
+    min-height: 100vh; /*sempre lembrar de dar altura para os elementos*/
+    width: 150px;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center; /*alinhar dentro da width desse item*/
+    gap: 10px; /*espaçamento*/
+    background-color: rgba(0, 0, 0, 0.3); /*dar o efeito de sombra*/
 }
 
-.botoes .botao {
-    border: none;
-    background: none;
-    cursor: pointer;
+ul.botoes .botao{
+    border: none; /*tirar a borda*/
+    background: none; /*tirar o fundo q todos botoes tem*/
+    cursor: pointer; /*pra mudar o cursor do mouse*/
     border-radius: 50%;
 }
 
-.botoes .botao > img {
-    border-radius: 50%;
+ul.botoes .botao > img{
+    border-radius: 50%; /*Deixar arredondados*/
 }
-.botoes .botao.selecionado {
-    transform: scale(1.2);
-    box-shadow: 0 0 10px #D9D9D9;
-}
-
-footer{
-    font-size: 1em;
-    display: block;
-    text-align: center;
-    color: red;
+ul.botoes .botao.selecionado{
+    transform: scale(1.2);  /*deixar um pouco maior pra ter um efeito, talvez olhar no projeto social pra fazer o mesmo efeito de la*/
+    box-shadow: 0 0 10px gray; /*cria tipo uma bordinha na volta dos botoes*/
+   
 }

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section#div1 > img{
+    width: 200px;
+    padding: 50px;
+}
+
+section#div1 > p{
+    width: 350px;
+    padding: 20px;
+    display: block;
+}
+
+section#div1 > h1{
+    margin-left: 10px;
+}
+
+section#div2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+    

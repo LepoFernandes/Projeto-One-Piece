@@ -7,24 +7,33 @@
 }
 
 section#div1 > img{
-    width: 200px;
+    width: 150px;
     padding: 50px;
+    position: relative;
+    
+    
 }
-
+main{
+    position: relative;
+}
 section#div1 > p{
     width: 350px;
     padding: 20px;
     display: block;
+    position: absolute;
 }
 
 section#div1 > h1{
     margin-left: 10px;
 }
 
-section#div2{
+ul#div2{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
 }
-    
+
+main{
+    background-image: url(/imagens/personagem-monkey-d-luffy.png);
+}

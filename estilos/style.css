@@ -11,6 +11,7 @@ ul{
 }
 body{
     background-color: black;
+    overflow: hidden; /*Serve parar tirar a rolagem da tela, evita 'transbordar' os elementos*/
 }
 
 main::after{/*Usa pra fazer o degrade, depois do main, pesquisar sobre isso dps*/
@@ -99,3 +100,4 @@ ul.botoes .botao.selecionado{
     box-shadow: 0 0 10px gray; /*cria tipo uma bordinha na volta dos botoes*/
    
 }
+
